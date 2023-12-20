@@ -1,0 +1,6 @@
+ec\edu\jairo\app\Controller\api.class
+ec\edu\jairo\app\ServletInitializer.class
+ec\edu\jairo\app\Controller\apiEstudiante.class
+ec\edu\jairo\app\Repository\EstudianteRepository.class
+ec\edu\jairo\app\AppApplication.class
+ec\edu\jairo\app\Models\Estudiante.class
