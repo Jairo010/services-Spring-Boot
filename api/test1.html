@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    let xhttp = new XMLHttpRequest(); 
+    xhttp.open("GET","select.php");  
+    xhttp.send();
+    xhttp.onload = () => { 
+        console.log(xhttp.status); 
+        console.log(xhttp.readyState);
+        console.log(xhttp.responseText); 
+    };    
+    </script>
+</body>
+</html>

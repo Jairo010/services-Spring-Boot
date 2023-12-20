@@ -1,0 +1,7 @@
+{
+    "name": "Carlos",
+    "lastName": "Flores",
+    "age": 40,
+    "education": [{"primary": "La Salle",
+                    "secondary": "Bolivar"}]
+}

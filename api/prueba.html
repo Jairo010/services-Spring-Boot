@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+
+</body>
+<script>
+    let cadena = '("message":"Hello world!!")';
+    let number = 5;
+    let objecto = ({"name":"Carlos","lastName":"Flores","Age":20});
+    let array = ["Monday","Tuesday","Wednesday"]
+    console.log(cadena);
+    console.log(number);
+    console.log(objecto);
+    console.log(array);
+
+    let person={
+        "name": "Carlos",
+        "lastName": "Flores",
+        "age": 20,
+        "job": true,
+        "favoriteColors": ["blue","red","purple"],
+        "education":{"primary":"La Salle","secondary":"Bolivar","higher":"UTA"},
+        "gender": "M"
+    }
+    console.log(person);
+
+    //parse() -> String json to object
+    let cadena1 = '{"message":"Hello world!!"}';
+    let objson = JSON.parse(cadena1);
+    console.log(objson);
+
+    //stringify() -> convert an object to JS or text
+    let object1 = '("name":"Carlos","lastName":"Flores","Age":20)';
+    let objs = JSON.stringify(object1);
+    console.log(objs);
+
+    //convert array to json
+    let array1 = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+    let arrayJson = JSON.stringify(array1);
+    console.log(arrayJson);
+
+    let arrayJson2 = JSON.parse(arrayJson);
+    console.log(arrayJson2);
+
+    let n = JSON.stringify(number);
+    
+    console.log(n);
+
+    console.log(JSON.parse(n));
+</script>
+function editUser() {
+    var row = $('#dg').datagrid('getSelected');
+    $.ajax({
+        url: 'http://quintosoa.com/api.php?cedula=' + row.cedula,
+        type: 'DELETE',
+        success: function(result) {
+            if (result.success) {
+                $.messager.show({
+                    title: 'Error',
+                    msg: result.errorMsg
+                });
+            } else {
+                $('#dg').datagrid('reload');
+            }
+        },
+        dataType: 'json'
+    });
+    if (row) {
+        $('#dlg').dialog('open').dialog('center').dialog('setTitle', 'Edit User');
+        $('#fm').form('load', row);
+        url = 'http://quintosoa.com/api.php';
+    }
+}
+</html>
